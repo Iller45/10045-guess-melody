@@ -9,6 +9,10 @@ const firstScreenIndex = 0;
 const lastScreenIndex = templatesHolder.length - 1;
 let currentScreen = 0;
 
+[].forEach.call(templatesHolder, function (el) {
+  appTemplates.push(el);
+});
+
 const changeScreen = (e) => {
   if (e.altKey && e.keyCode === KeyCode.ARROW__LEFT) {
     currentScreen--;
@@ -33,9 +37,5 @@ const showScreen = (num) => {
 };
 
 document.addEventListener(`keydown`, changeScreen);
-
-[].forEach.call(templatesHolder, function (element) {
-  appTemplates.push(element);
-});
 
 showScreen(currentScreen);
