@@ -5,6 +5,8 @@
   const appTemplates = [];
   let currentScreen = 1;
 
+  
+
 
   function changeScreeen(event) {
     console.log(event);
