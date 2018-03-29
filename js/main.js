@@ -13,19 +13,9 @@ let currentScreen = 0;
   appTemplates.push(el);
 });
 
-const changeScreen = (e) => {
-  if (e.altKey && e.keyCode === KeyCode.ARROW__LEFT) {
-    currentScreen--;
-    showScreen(currentScreen);
-  } else if (e.altKey && e.keyCode === KeyCode.ARROW__RIGHT) {
-    currentScreen++;
-    showScreen(currentScreen);
-  }
-};
-
 const showScreen = (num) => {
   appScreen.innerHTML = ``;
-  if (num > appTemplates.length) {
+  if (num >= appTemplates.length) {
     currentScreen = firstScreenIndex;
     appScreen.appendChild(appTemplates[currentScreen]);
   } else if (num < 0) {
@@ -34,7 +24,26 @@ const showScreen = (num) => {
   } else {
     appScreen.appendChild(appTemplates[num]);
   }
-};
+}
+;
+
+const changeScreen = (e) =
+>
+{
+  if (!e.altKey) {
+    return;
+  } else {
+    if (e.keyCode === KeyCode.ARROW__LEFT) {
+      currentScreen--;
+      showScreen(currentScreen);
+    } else if (e.keyCode === KeyCode.ARROW__RIGHT) {
+      currentScreen++;
+      showScreen(currentScreen);
+    }
+  }
+}
+;
+
 
 document.addEventListener(`keydown`, changeScreen);
 
