@@ -27,9 +27,7 @@ const showScreen = (num) => {
 }
 ;
 
-const changeScreen = (e) =
->
-{
+const changeScreen = (e) =>{
   if (!e.altKey) {
     return;
   } else {
