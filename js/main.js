@@ -24,24 +24,20 @@ const showScreen = (num) => {
   } else {
     appScreen.appendChild(appTemplates[num]);
   }
-}
-;
+};
 
 const changeScreen = (e) =>{
   if (!e.altKey) {
     return;
-  } else {
-    if (e.keyCode === KeyCode.ARROW__LEFT) {
-      currentScreen--;
-      showScreen(currentScreen);
-    } else if (e.keyCode === KeyCode.ARROW__RIGHT) {
-      currentScreen++;
-      showScreen(currentScreen);
-    }
   }
-}
-;
-
+  if (e.keyCode === KeyCode.ARROW__LEFT) {
+    currentScreen--;
+    showScreen(currentScreen);
+  } else if (e.keyCode === KeyCode.ARROW__RIGHT) {
+    currentScreen++;
+    showScreen(currentScreen);
+  }
+};
 
 document.addEventListener(`keydown`, changeScreen);
 
