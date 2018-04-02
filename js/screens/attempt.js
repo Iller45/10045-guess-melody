@@ -1,8 +1,9 @@
 import {getElementFromTemplate} from "../services/elementFromString";
-import {createScreen} from "../services/createScreen";
-import {moduleOneElement} from "./module-1";
+import {renderScreen} from "../services/renderScreen";
+import {welcomeElement} from "./welcome";
 
-export const moduleSixElement = getElementFromTemplate(`  <!-- Результат игры: проигрыш закончились попытки -->
+export const attemptElement = getElementFromTemplate(`  
+  <!-- Результат игры: проигрыш закончились попытки -->
   <section class="main main--result">
     <section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
     <h2 class="title">Какая жалость!</h2>
@@ -12,7 +13,7 @@ export const moduleSixElement = getElementFromTemplate(`  <!-- Результа�
 `);
 
 const toNextScreen = () => {
-  createScreen(moduleOneElement);
+  renderScreen(welcomeElement);
 };
-const triggerElement = moduleSixElement.querySelector(`.main-replay`);
+const triggerElement = attemptElement.querySelector(`.main-replay`);
 triggerElement.addEventListener(`click`, toNextScreen);

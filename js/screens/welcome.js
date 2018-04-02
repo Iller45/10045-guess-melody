@@ -1,8 +1,8 @@
 import {getElementFromTemplate} from "../services/elementFromString";
-import {createScreen} from "../services/createScreen";
-import {moduleTwoElement} from "./module-2";
+import {renderScreen} from "../services/renderScreen";
+import {artistElement} from "./artist";
 
-const moduleOneElement = getElementFromTemplate(`  
+const welcomeElement = getElementFromTemplate(`  
   <!-- Приветствие -->
   <section class="main main--welcome">
     <section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
@@ -17,10 +17,10 @@ const moduleOneElement = getElementFromTemplate(`
 `);
 
 const toNextScreen = () => {
-  createScreen(moduleTwoElement);
+  renderScreen(artistElement);
 };
 
-const triggerElement = moduleOneElement.querySelector(`.main-play`);
+const triggerElement = welcomeElement.querySelector(`.main-play`);
 triggerElement.addEventListener(`click`, toNextScreen);
 
-export {moduleOneElement};
+export {welcomeElement};

@@ -1,8 +1,8 @@
 import {getElementFromTemplate} from "../services/elementFromString";
-import {createScreen} from "../services/createScreen";
-import {moduleThirdElement} from "./module-3";
+import {renderScreen} from "../services/renderScreen";
+import {genreElement} from "./genre";
 
-const moduleTwoElement = getElementFromTemplate(`  
+const artistElement = getElementFromTemplate(`  
   <!-- Игра на выбор исполнителя -->
   <section class="main main--level main--level-artist">
     <svg xmlns="http://www.w3.org/2000/svg" class="timer" viewBox="0 0 780 780">
@@ -66,12 +66,12 @@ const moduleTwoElement = getElementFromTemplate(`
 `);
 
 const toNextScreen = () => {
-  createScreen(moduleThirdElement);
+  renderScreen(genreElement);
 };
 
-const triggerElements = moduleTwoElement.querySelectorAll(`.main-answer`);
+const triggerElements = artistElement.querySelectorAll(`.main-answer`);
 for (let el of triggerElements) {
   el.addEventListener(`click`, toNextScreen);
 }
 
-export {moduleTwoElement};
+export {artistElement};

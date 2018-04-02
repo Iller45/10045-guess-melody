@@ -1,8 +1,8 @@
 import {getElementFromTemplate} from "../services/elementFromString";
-import {createScreen} from "../services/createScreen";
-import {moduleOneElement} from "./module-1";
+import {renderScreen} from "../services/renderScreen";
+import {welcomeElement} from "./welcome";
 
-export const moduleFiveElement = getElementFromTemplate(`  
+export const timeOutElement = getElementFromTemplate(`  
   <!-- Результат игры: проигрыш время вышло -->
   <section class="main main--result">
     <section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
@@ -13,7 +13,7 @@ export const moduleFiveElement = getElementFromTemplate(`
 `);
 
 const toNextScreen = () => {
-  createScreen(moduleOneElement);
+  renderScreen(welcomeElement);
 };
-const triggerElement = moduleFiveElement.querySelector(`.main-replay`);
+const triggerElement = timeOutElement.querySelector(`.main-replay`);
 triggerElement.addEventListener(`click`, toNextScreen);

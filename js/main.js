@@ -1,4 +1,4 @@
-import {moduleOneElement} from "./screens/module-1";
-import {createScreen} from "./services/createScreen";
+import {welcomeElement} from "./screens/welcome";
+import {renderScreen} from "./services/renderScreen";
 
-createScreen(moduleOneElement);
+renderScreen(welcomeElement);

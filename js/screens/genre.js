@@ -1,10 +1,10 @@
 import {getElementFromTemplate} from "../services/elementFromString";
-import {createScreen} from "../services/createScreen";
-import {moduleFourElement} from "./module-4";
-import {moduleFiveElement} from "./module-5";
-import {moduleSixElement} from "./module-6";
+import {renderScreen} from "../services/renderScreen";
+import {winElement} from "./win";
+import {timeOutElement} from "./timeOut";
+import {attemptElement} from "./attempt";
 
-const moduleThirdElement = getElementFromTemplate(`  
+const genreElement = getElementFromTemplate(`  
   <!-- Игра на выбор жанра -->
   <section class="main main--level main--level-genre">
     <svg xmlns="http://www.w3.org/2000/svg" class="timer" viewBox="0 0 780 780">
@@ -91,18 +91,18 @@ const moduleThirdElement = getElementFromTemplate(`
 `);
 
 
-const triggerElement = moduleThirdElement.querySelector(`.genre-answer-send`);
-const answerArr = moduleThirdElement.querySelectorAll(`.genre-answer`);
+const triggerElement = genreElement.querySelector(`.genre-answer-send`);
+const answerArr = genreElement.querySelectorAll(`.genre-answer`);
 
 const toNextScreen = () => {
-  const checkedCheckboxes = moduleThirdElement.querySelectorAll(`[name=answer]:checked`);
+  const checkedCheckboxes = genreElement.querySelectorAll(`[name=answer]:checked`);
   const nextPagesArr = [
-    moduleFourElement, moduleFiveElement, moduleSixElement
+    winElement, timeOutElement, attemptElement
   ];
   if (checkedCheckboxes.length === 0) {
     return;
   }
-  createScreen(nextPagesArr[Math.floor(Math.random() * nextPagesArr.length)]);
+  renderScreen(nextPagesArr[Math.floor(Math.random() * nextPagesArr.length)]);
   for (let checkBox of checkedCheckboxes) {
     checkBox.checked = false;
   }
@@ -111,7 +111,7 @@ const toNextScreen = () => {
 triggerElement.addEventListener(`click`, toNextScreen);
 
 const checkCheckboxes = () => {
-  if (moduleThirdElement.querySelectorAll(`[name=answer]:checked`).length > 0) {
+  if (genreElement.querySelectorAll(`[name=answer]:checked`).length > 0) {
     triggerElement.disabled = false;
   } else {
     triggerElement.disabled = true;
@@ -122,4 +122,4 @@ for (let answer of answerArr) {
   answer.addEventListener(`click`, checkCheckboxes);
 }
 
-export {moduleThirdElement};
+export {genreElement};
