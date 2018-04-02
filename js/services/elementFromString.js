@@ -1,5 +1,5 @@
 export const getElementFromTemplate = (htmlString)=> {
-  const el = document.createElement(`span`);
+  const el = document.createElement(`div`);
   el.innerHTML = htmlString.trim();
-  return el;
+  return el.children[0];
 };

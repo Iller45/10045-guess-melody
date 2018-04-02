@@ -4,7 +4,7 @@ import {welcomeElement} from "./welcome";
 
 export const winElement = getElementFromTemplate(` 
   <!-- Результат игры: выигрыш -->
-  <section class="main main--result">
+  <section name="tttt" class="main main--result">
     <section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
     <h2 class="title">Вы настоящий меломан!</h2>
     <div class="main-stat">За&nbsp;3&nbsp;минуты и 25&nbsp;секунд

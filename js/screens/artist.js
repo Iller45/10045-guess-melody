@@ -69,9 +69,6 @@ const toNextScreen = () => {
   renderScreen(genreElement);
 };
 
-const triggerElements = artistElement.querySelectorAll(`.main-answer`);
-for (let el of triggerElements) {
-  el.addEventListener(`click`, toNextScreen);
-}
+artistElement.querySelector(`.main-list`).addEventListener(`click`, toNextScreen);
 
 export {artistElement};

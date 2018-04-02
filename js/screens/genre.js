@@ -92,7 +92,6 @@ const genreElement = getElementFromTemplate(`
 
 
 const triggerElement = genreElement.querySelector(`.genre-answer-send`);
-const answerArr = genreElement.querySelectorAll(`.genre-answer`);
 
 const toNextScreen = () => {
   const checkedCheckboxes = genreElement.querySelectorAll(`[name=answer]:checked`);
@@ -118,8 +117,5 @@ const checkCheckboxes = () => {
   }
 };
 checkCheckboxes();
-for (let answer of answerArr) {
-  answer.addEventListener(`click`, checkCheckboxes);
-}
-
+genreElement.querySelector(`.genre`).addEventListener(`click`, checkCheckboxes);
 export {genreElement};
