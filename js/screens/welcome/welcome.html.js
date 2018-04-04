@@ -1,8 +1,4 @@
-import {getElementFromTemplate} from "../services/elementFromString";
-import {renderScreen} from "../services/renderScreen";
-import {artistElement} from "./artist";
-
-const welcomeElement = getElementFromTemplate(`  
+const welcomeHTML = `  
   <!-- Приветствие -->
   <section class="main main--welcome">
     <section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
@@ -14,13 +10,6 @@ const welcomeElement = getElementFromTemplate(`
       Удачи!
     </p>
   </section>
-`);
+`;
 
-const toNextScreen = () => {
-  renderScreen(artistElement);
-};
-
-const triggerElement = welcomeElement.querySelector(`.main-play`);
-triggerElement.addEventListener(`click`, toNextScreen);
-
-export {welcomeElement};
+export {welcomeHTML};
