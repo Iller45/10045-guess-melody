@@ -1,9 +1,9 @@
 import {getElementFromTemplate} from "../../services/elementFromString";
 import {renderScreen} from "../../services/renderScreen";
 import {welcomeElement} from "../welcome/welcome";
-import {timeOutHTML} from "./timeOut.html";
+import {timeOutTemplate} from "./timeOut.template";
 
-export const timeOutElement = getElementFromTemplate(timeOutHTML);
+export const timeOutElement = getElementFromTemplate(timeOutTemplate);
 
 const toWelcomeScreen = () => {
   renderScreen(welcomeElement);

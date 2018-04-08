@@ -1,4 +1,4 @@
-const welcomeHTML = `  
+const welcomeTemplate = `  
   <!-- Приветствие -->
   <section class="main main--welcome">
     <section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
@@ -12,4 +12,4 @@ const welcomeHTML = `
   </section>
 `;
 
-export {welcomeHTML};
+export {welcomeTemplate};

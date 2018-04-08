@@ -1,4 +1,4 @@
-const timeOutHTML = `  
+const timeOutTemplate = `  
   <!-- Результат игры: проигрыш время вышло -->
   <section class="main main--result">
     <section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
@@ -7,4 +7,4 @@ const timeOutHTML = `
     <span role="button" tabindex="0" class="main-replay">Попробовать ещё раз</span>
   </section>`;
 
-export {timeOutHTML};
+export {timeOutTemplate};

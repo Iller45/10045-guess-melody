@@ -1,4 +1,4 @@
-const artistsHTML = `
+const artistsTemplate = `
     <!-- Игра на выбор исполнителя -->
   <section class="main main--level main--level-artist">
     <svg xmlns="http://www.w3.org/2000/svg" class="timer" viewBox="0 0 780 780">
@@ -60,4 +60,4 @@ const artistsHTML = `
     </div>
   </section>`;
 
-export {artistsHTML};
+export {artistsTemplate};

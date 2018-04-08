@@ -3,9 +3,9 @@ import {renderScreen} from "../../services/renderScreen";
 import {winElement} from "../win/win";
 import {timeOutElement} from "../timeOut/timeOut";
 import {attemptElement} from "../attempts/attempts";
-import {genresHTML} from "./genres.html";
+import {genresTemplate} from "./genres.template";
 
-const genreElement = getElementFromTemplate(genresHTML);
+const genreElement = getElementFromTemplate(genresTemplate);
 
 
 const triggerElement = genreElement.querySelector(`.genre-answer-send`);

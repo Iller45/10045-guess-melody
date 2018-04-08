@@ -1,4 +1,4 @@
-const attemptsHTML = `  
+const attemptsTemplate = `  
   <!-- Результат игры: проигрыш закончились попытки -->
   <section class="main main--result">
     <section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
@@ -8,4 +8,4 @@ const attemptsHTML = `
   </section>
 `;
 
-export {attemptsHTML};
+export {attemptsTemplate};

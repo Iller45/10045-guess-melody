@@ -1,9 +1,9 @@
 import {getElementFromTemplate} from "../../services/elementFromString";
 import {renderScreen} from "../../services/renderScreen";
 import {welcomeElement} from "../welcome/welcome";
-import {attemptsHTML} from "./attempts.html";
+import {attemptsTemplate} from "./attempts.template";
 
-export const attemptElement = getElementFromTemplate(attemptsHTML);
+export const attemptElement = getElementFromTemplate(attemptsTemplate);
 
 const toWelcomeScreen = () => {
   renderScreen(welcomeElement);

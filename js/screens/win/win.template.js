@@ -1,4 +1,4 @@
-const winHTML = `  
+const winTemplate = `  
   <!-- Результат игры: выигрыш -->
   <section name="tttt" class="main main--result">
     <section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
@@ -10,4 +10,4 @@ const winHTML = `
     <span role="button" tabindex="0" class="main-replay">Сыграть ещё раз</span>
   </section>`;
 
-export {winHTML};
+export {winTemplate};
