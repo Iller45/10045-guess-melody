@@ -10,6 +10,19 @@ import {
 const makeException = (text) => {
   throw new Error(text);
 };
+const sortArray = (array) => {
+  let _array = array;
+  const compareLikeNumber = (a, b) => {
+    if (a > b) {
+      return -1;
+    }
+    if (a < b) {
+      return 1;
+    }
+    return 0;
+  };
+  return _array.sort(compareLikeNumber);
+};
 
 class Score {
   constructor() {
@@ -34,14 +47,11 @@ class Score {
     answers.forEach((item) => {
       if (item.win && item.time < ANSWER_TIME_LIMIT) {
         this.score = this.score + SCORE_FOR_FAST_ANSWER;
-        return this.score;
       } else if (item.win && item.time >= ANSWER_TIME_LIMIT) {
-        return ++this.score;
+        ++this.score;
       } else if (!item.win) {
         this.score = this.score + SCORE_FOR_WRONG_ANSWER;
-        return this.score;
       }
-      return this.score;
     });
     return this.score;
   }
@@ -59,18 +69,11 @@ class Score {
       finishPhrase = `У вас закончились все попытки. Ничего, повезёт в следующий раз!`;
       return finishPhrase;
     }
-    const compareLikeNumber = (a, b) => {
-      if (a > b) {
-        return -1;
-      }
-      if (a < b) {
-        return 1;
-      }
-      return 0;
-    };
+
+
     othersAnswers.push(resultObject.score);
     const userScore = resultObject.score;
-    const leaderBoard = othersAnswers.sort(compareLikeNumber);
+    const leaderBoard = sortArray(othersAnswers);
     const userPosition = leaderBoard.indexOf(userScore) + 1;
     const userProcent = (((othersAnswers.length) - userPosition) / othersAnswers.length) * 100;
     finishPhrase = `Вы заняли ${userPosition}-ое место из ${ othersAnswers.length} игроков. Это лучше, чем у ${userProcent}% игроков`;

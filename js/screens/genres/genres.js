@@ -7,18 +7,21 @@ import {genresTemplate} from "./genres.template";
 
 const genreElement = getElementFromTemplate(genresTemplate);
 
-
 const triggerElement = genreElement.querySelector(`.genre-answer-send`);
 
-const toResultScreen = () => {
-  const checkedCheckboxes = genreElement.querySelectorAll(`[name=answer]:checked`);
+const doRandomScreenName = () => {
   const nextPagesArr = [
     winElement, timeOutElement, attemptElement
   ];
+  return nextPagesArr[Math.floor(Math.random() * nextPagesArr.length)];
+};
+
+const toResultScreen = () => {
+  const checkedCheckboxes = genreElement.querySelectorAll(`[name=answer]:checked`);
   if (checkedCheckboxes.length === 0) {
     return;
   }
-  renderScreen(nextPagesArr[Math.floor(Math.random() * nextPagesArr.length)]);
+  renderScreen(doRandomScreenName());
   for (let checkBox of checkedCheckboxes) {
     checkBox.checked = false;
   }
