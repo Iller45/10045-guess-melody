@@ -1,9 +1,9 @@
 import {renderScreen} from "../../services/renderScreen";
 import {artistElement} from "../arists/artists";
 import {getElementFromTemplate} from "../../services/elementFromString";
-import {welcomeTemplate} from "./welcome.template";
+import {welcomeElementTemplate} from "./welcome.template";
 
-const welcomeElement = getElementFromTemplate(welcomeTemplate);
+const welcomeElement = getElementFromTemplate(welcomeElementTemplate);
 
 const toArtistsScreen = () => {
   renderScreen(artistElement);
