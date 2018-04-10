@@ -1,15 +1,11 @@
-import {getElementFromTemplate} from "../services/elementFromString";
-import {renderScreen} from "../services/renderScreen";
-import {genreElement} from "./genre";
-
-const artistElement = getElementFromTemplate(`  
-  <!-- Игра на выбор исполнителя -->
+const artistsTemplate = `
+    <!-- Игра на выбор исполнителя -->
   <section class="main main--level main--level-artist">
     <svg xmlns="http://www.w3.org/2000/svg" class="timer" viewBox="0 0 780 780">
       <circle
         cx="390" cy="390" r="370"
         class="timer-line"
-        style="filter: url(.#blur); transform: rotate(-90deg) scaleY(-1); transform-origin: center"></circle>
+        style="filter: url(..#blur); transform: rotate(-90deg) scaleY(-1); transform-origin: center"></circle>
 
       <div class="timer-value" xmlns="http://www.w3.org/1999/xhtml">
         <span class="timer-value-mins">05</span><!--
@@ -62,13 +58,6 @@ const artistElement = getElementFromTemplate(`
         </div>
       </form>
     </div>
-  </section>
-`);
+  </section>`;
 
-const toNextScreen = () => {
-  renderScreen(genreElement);
-};
-
-artistElement.querySelector(`.main-list`).addEventListener(`click`, toNextScreen);
-
-export {artistElement};
+export {artistsTemplate};

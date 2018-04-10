@@ -1,17 +1,11 @@
-import {getElementFromTemplate} from "../services/elementFromString";
-import {renderScreen} from "../services/renderScreen";
-import {winElement} from "./win";
-import {timeOutElement} from "./timeOut";
-import {attemptElement} from "./attempt";
-
-const genreElement = getElementFromTemplate(`  
+const genresTemplate = `
   <!-- Игра на выбор жанра -->
   <section class="main main--level main--level-genre">
     <svg xmlns="http://www.w3.org/2000/svg" class="timer" viewBox="0 0 780 780">
       <circle
         cx="390" cy="390" r="370"
         class="timer-line"
-        style="filter: url(.#blur); transform: rotate(-90deg) scaleY(-1); transform-origin: center"></circle>
+        style="filter: url(..#blur); transform: rotate(-90deg) scaleY(-1); transform-origin: center"></circle>
 
       <div class="timer-value" xmlns="http://www.w3.org/1999/xhtml">
         <span class="timer-value-mins">05</span><!--
@@ -87,35 +81,6 @@ const genreElement = getElementFromTemplate(`
         <button class="genre-answer-send" type="submit">Ответить</button>
       </form>
     </div>
-  </section>
-`);
+  </section>`;
 
-
-const triggerElement = genreElement.querySelector(`.genre-answer-send`);
-
-const toNextScreen = () => {
-  const checkedCheckboxes = genreElement.querySelectorAll(`[name=answer]:checked`);
-  const nextPagesArr = [
-    winElement, timeOutElement, attemptElement
-  ];
-  if (checkedCheckboxes.length === 0) {
-    return;
-  }
-  renderScreen(nextPagesArr[Math.floor(Math.random() * nextPagesArr.length)]);
-  for (let checkBox of checkedCheckboxes) {
-    checkBox.checked = false;
-  }
-  checkCheckboxes();
-};
-triggerElement.addEventListener(`click`, toNextScreen);
-
-const checkCheckboxes = () => {
-  if (genreElement.querySelectorAll(`[name=answer]:checked`).length > 0) {
-    triggerElement.disabled = false;
-  } else {
-    triggerElement.disabled = true;
-  }
-};
-checkCheckboxes();
-genreElement.querySelector(`.genre`).addEventListener(`click`, checkCheckboxes);
-export {genreElement};
+export {genresTemplate};
