@@ -1,10 +1,7 @@
-import {state} from '../../services/state';
-import {commonPart} from "../../services/commonPart";
-
 const welcomeModel = {
   title: `Начать игру`,
-  text: `Правила просты&nbsp;— за&nbsp;${commonPart.minutesAtStart} минут ответить на все вопросы.<br>
-    Ошибиться можно ${state.notes} раза.<br>
+  text: `Правила просты&nbsp;— за&nbsp;5 минут ответить на все вопросы.<br>
+    Ошибиться можно 3 раза.<br>
     Удачи!`
 
 };

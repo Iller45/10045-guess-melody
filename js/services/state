@@ -1,6 +1,0 @@
-const state = {
-  notes: 3,
-  time: 300
-};
-
-export {state};
