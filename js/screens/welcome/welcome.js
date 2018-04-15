@@ -1,15 +1,17 @@
-import {renderScreen} from "../../services/renderScreen";
-import {artistElement} from "../arists/artists";
 import {getElementFromTemplate} from "../../services/elementFromString";
-import {welcomeTemplate} from "./welcome.template";
+import {welcomeElementTemplate} from "./welcome.template";
+import newGame from "../game/GameCtrl";
+import {gameScreenRenderer} from "../game/gameRender";
+import {renderScreen} from "../../services/renderScreen";
 
-const welcomeElement = getElementFromTemplate(welcomeTemplate);
+const welcomeElement = getElementFromTemplate(welcomeElementTemplate);
 
-const toArtistsScreen = () => {
-  renderScreen(artistElement);
+const toGame = () => {
+  const game = newGame();
+  renderScreen(gameScreenRenderer(game));
 };
 const triggerElement = welcomeElement.querySelector(`.main-play`);
-triggerElement.addEventListener(`click`, toArtistsScreen);
+triggerElement.addEventListener(`click`, toGame);
 
 export {welcomeElement};
 

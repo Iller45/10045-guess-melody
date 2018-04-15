@@ -1,15 +1,16 @@
-const welcomeTemplate = `  
-  <!-- Приветствие -->
-  <section class="main main--welcome">
-    <section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
-    <button class="main-play">Начать игру</button>
-    <h2 class="title main-title">Правила игры</h2>
-    <p class="text main-text">
-      Правила просты&nbsp;— за&nbsp;5 минут ответить на все вопросы.<br>
-      Ошибиться можно 3 раза.<br>
-      Удачи!
-    </p>
-  </section>
-`;
+import {commonGameText} from '../../data/commonGameText';
+import {welcomeModel} from './welcome.model';
 
-export {welcomeTemplate};
+const welcomeElementTemplate = `
+<!-- Приветствие -->
+<section class="main main--welcome">
+  <section class="logo" title="Угадай мелодию"><h1><${commonGameText.appTitle}/h1></section>
+  <button class="main-play">${welcomeModel.title}</button>
+  <h2 class="title main-title">${commonGameText.rulesTitle}</h2>
+  <p class="text main-text">
+    ${welcomeModel.text}
+  </p>
+</section>`;
+
+
+export {welcomeElementTemplate};
