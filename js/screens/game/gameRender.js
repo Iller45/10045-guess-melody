@@ -4,7 +4,6 @@ import {renderScreen} from '../../services/renderScreen';
 import resultScreen from '../result/resultScreen';
 import {gameMistakesMax} from "../../data/gameConst";
 
-
 export const gameScreenRenderer = (Game) => {
   const header = getHeader(Game);
   const question = Game.doNextQuestion();

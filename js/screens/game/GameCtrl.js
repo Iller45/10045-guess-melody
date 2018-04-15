@@ -30,8 +30,6 @@ class GameCtrl {
     const score = new Score(this);
     return score.displayScore();
   }
-
-
 }
 
 export default () => {

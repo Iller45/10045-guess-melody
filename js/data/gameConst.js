@@ -25,6 +25,9 @@ const gameTimeLimit = 300;
 const gameAnswerQty = 10;
 const gameMistakesMin = 0;
 const gameMistakesMax = 3;
+const theOneEndings = 1;
+const multipleTen = 10;
+const multipleFive = 5;
 
 
-export {makeGameType, reOrderLibrary, makeChaosAnswer, trueArtistAnswerIndex, sliceStart, artistSliceEnd, genreSliceEnd, answerTimeLimit, gameTimeLimit, gameAnswerQty, gameMistakesMin, gameMistakesMax};
+export {makeGameType, reOrderLibrary, makeChaosAnswer, trueArtistAnswerIndex, sliceStart, artistSliceEnd, genreSliceEnd, answerTimeLimit, gameTimeLimit, gameAnswerQty, gameMistakesMin, gameMistakesMax, theOneEndings, multipleFive, multipleTen};

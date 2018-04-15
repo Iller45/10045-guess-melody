@@ -4,7 +4,7 @@ class AnswerCtrl {
   constructor(userAnswer, answer, gameType) {
     this.time = answerTimeLimit;
     if (gameType === `artist`) {
-      this.win = (userAnswer === answer.name) ? true : false;
+      this.win = (userAnswer === answer.name);
     }
 
     if (gameType === `genre`) {
