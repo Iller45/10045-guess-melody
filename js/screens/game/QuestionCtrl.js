@@ -4,7 +4,7 @@ import {reOrderLibrary, makeChaosAnswer, trueArtistAnswerIndex, sliceStart, arti
 class QuestionCtrl {
   constructor(gameData) {
     this.gameType = gameData.gameType;
-    this.library = reOrderLibrary;
+    this.library = reOrderLibrary();
 
     if (this.gameType === `artist`) {
       this.title = `Кто исполняет эту песню?`;
