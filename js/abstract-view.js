@@ -14,9 +14,9 @@ class AbstractView {
   }
 
   render() {
-    this._div = document.createElement(`div`);
-    this._div.innerHTML = this.template;
-    return this._div;
+    this.wrapper = document.createElement(`div`);
+    this.wrapper.innerHTML = this.template;
+    return this.wrapper;
   }
 
   bind() {

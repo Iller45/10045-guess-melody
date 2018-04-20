@@ -1,5 +1,10 @@
 import {commonGameText} from '../../data/commonGameText';
-import {welcomeModel} from './welcome.model';
+const welcomeModel = {
+  title: `Начать игру`,
+  text: `Правила просты&nbsp;— за&nbsp;5 минут ответить на все вопросы.<br>
+    Ошибиться можно 3 раза.<br>
+    Удачи!`
+};
 
 const welcomeElementTemplate = `
 <!-- Приветствие -->

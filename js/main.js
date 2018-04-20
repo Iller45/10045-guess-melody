@@ -1,3 +1,4 @@
-import {welcomeElement} from "./screens/welcome/welcome";
-import {renderScreen} from "./services/renderScreen";
-renderScreen(welcomeElement);
+import {WelcomePresenter} from "./screens/welcome/welcome.presenter";
+
+const welcome = new WelcomePresenter();
+welcome.init();
