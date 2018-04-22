@@ -1,22 +1,26 @@
-import {welcomeElement} from '../../screens/welcome/welcome';
-import {renderScreen} from '../../services/renderScreen';
-import {getElementFromTemplate} from '../../services/elementFromString';
 import {commonGameText} from "../../data/commonGameText";
+import {AbstractView} from "../../abstract-view";
+import {Application} from "../../app";
 
-export default (userResult) => {
-  const template = `
+class ResultView extends AbstractView {
+  constructor(gameModel) {
+    super();
+    this.game = gameModel;
+  }
+  get template() {
+    return `
   <section class="main main--result">
     <section class="logo" title="Угадай мелодию"><h1>${commonGameText.appTitle}</h1></section>
-    ${userResult.doUserResult}
+    ${this.game.doUserResult}
     <span role="button" tabindex="0" class="main-replay">Попробовать ещё раз</span>
   </section>`;
+  }
+  bind() {
+    const replayBtn = this.element.querySelector(`.main-replay`);
+    replayBtn.addEventListener(`click`, () => {
+      Application.startGame();
+    });
+  }
+}
 
-  const content = getElementFromTemplate(template);
-  const replayBtn = content.querySelector(`.main-replay`);
-
-  replayBtn.addEventListener(`click`, () => {
-    renderScreen(welcomeElement);
-  });
-
-  return content;
-};
+export {ResultView};

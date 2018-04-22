@@ -5,7 +5,7 @@ const MAX_MISTAKES = 3;
 
 const winGame = {
   "gameType": `genre`,
-  "gameTime": 300,
+  "timer": 300,
   "questions": 7,
   "answers": [
     {
@@ -64,7 +64,7 @@ const normalGameMock = `\n    <h2 class="title">Вы настоящий мело
 
 const timeoutGame = {
   "gameType": `genre`,
-  "gameTime": 0,
+  "timer": 0,
   "questions": 7,
   "answers": [
     {
@@ -85,7 +85,7 @@ const timeoutGameMock = `\n      <h2 class="title">Увы и ах!</h2>\n      <
 
 const manyMistakes = {
   "gameType": `genre`,
-  "gameTime": 0,
+  "timer": 0,
   "questions": 7,
   "answers": [
     {

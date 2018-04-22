@@ -1,10 +1,20 @@
 import {AnswerCtrl} from './AnswersCtrl';
-import {reOrderLibrary, makeChaosAnswer, trueArtistAnswerIndex, sliceStart, artistSliceEnd, genreSliceEnd} from "../../data/gameConst";
+import {
+  reOrderLibrary,
+  makeChaosAnswer,
+  trueArtistAnswerIndex,
+  sliceStart,
+  artistSliceEnd,
+  genreSliceEnd,
+  makeGameType
+} from "../../data/gameConst";
 
 class QuestionCtrl {
   constructor(gameData) {
-    this.gameType = gameData.gameType;
-    this.library = reOrderLibrary;
+    this.game = gameData;
+    this.gameType = makeGameType();
+    this.library = reOrderLibrary();
+    this.time = this.game.timer;
 
     if (this.gameType === `artist`) {
       this.title = `Кто исполняет эту песню?`;
@@ -20,7 +30,8 @@ class QuestionCtrl {
   }
 
   doNextAnswer(userAnswer) {
-    return new AnswerCtrl(userAnswer, this.answer, this.gameType);
+    this.answerTime = this.time - this.game.timer;
+    return new AnswerCtrl(userAnswer, this);
   }
 }
 

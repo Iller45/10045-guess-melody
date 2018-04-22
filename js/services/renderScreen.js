@@ -1,4 +1,4 @@
-const appScreen = document.getElementsByClassName(`main`)[0];
+const appScreen = document.getElementsByClassName(`app`)[0];
 const renderScreen = (el) => {
   appScreen.innerHTML = ``;
   appScreen.appendChild(el);
