@@ -73,7 +73,7 @@ class Score {
     const leaderBoard = sortArray(this.gameModel.commonStatistics);
     const userPosition = leaderBoard.indexOf(userScore.total) + 1;
     const userProcent = (((this.gameModel.commonStatistics.length) - userPosition) / this.gameModel.commonStatistics.length) * 100;
-    const time = formatTime(this.gameModel.gameTime);
+    const time = formatTime(this.gameModel.timer);
 
     return `
     <h2 class="title">Вы настоящий меломан!</h2>
