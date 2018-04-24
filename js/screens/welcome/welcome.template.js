@@ -5,7 +5,6 @@ const welcomeText = {
   content: `Правила просты&nbsp;— за&nbsp;5 минут ответить на все вопросы.<br>
     Ошибиться можно 3 раза.<br>
     Удачи!`
-
 };
 
 const welcomeElementTemplate = `

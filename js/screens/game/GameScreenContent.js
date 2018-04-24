@@ -75,9 +75,7 @@ class GameScreenContent extends AbstractView {
       const formBtn = form.querySelector(`.genre-answer-send`);
       formBtn.setAttribute(`disabled`, `disabled`);
       const checkActive = () => {
-        return checkboxes.some((checkbox) => {
-          return checkbox.checked;
-        });
+        return checkboxes.some((checkbox) => checkbox.checked);
       };
 
       checkboxes.forEach((checkbox) => {

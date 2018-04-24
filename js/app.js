@@ -12,7 +12,7 @@ class Application {
   }
 
   static startGame() {
-    let model = new GameModel();
+    const model = new GameModel();
     const gameScreen = new GameScreen(model);
     renderScreen(gameScreen.element);
     gameScreen.init();

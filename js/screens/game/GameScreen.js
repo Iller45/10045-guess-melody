@@ -51,13 +51,13 @@ class GameScreen {
   }
 
   changeContent() {
-    this.updateHeader();
     this.question = this.model.doQuestion();
     const view = new GameScreenContent(this.question, this.model);
+    this.gameScreenWrp.className = `main main--level main--level-${this.question.gameType}`;
     this.gameScreenWrp.replaceChild(view.element, this.content.element);
     this.content = view;
     this.bind();
-    this.gameScreenWrp.className = `main main--level main--level-${this.question.gameType}`;
+    this.updateHeader();
   }
 
   bind() {

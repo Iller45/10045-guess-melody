@@ -16,7 +16,7 @@ const makeChaosAnswer = (answers) => {
   return answers[Math.floor(Math.random() * answers.length)].genre;
 };
 
-const makeStroke = (radius) => {
+let makeStroke = (radius) => {
   return Math.round(2 * Math.PI * radius);
 };
 
